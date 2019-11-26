@@ -2,7 +2,6 @@
   .header
     %h3.header__name
       = current_user.name
-      ユーザーネーム
     %ul.header__lists
       %li.list
         = link_to new_group_path do
@@ -17,4 +16,4 @@
           .group__name
             = group.name
           .group__message
-            メッセージはまだありません。
+            = group.show_last_message
