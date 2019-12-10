@@ -4,6 +4,9 @@
       box-sizing: border-box;
       height: 100px;
       padding: 0 40px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: solid 1px #eee;
       .left-header {
         float: left;
         &__title {
@@ -34,11 +37,13 @@
     }
   
     .messages {
-      background-color: #FAFAFA;
       box-sizing: border-box;
-      padding: 46px 40px 0;
-      height: calc(100% - 100px - 90px);
+      height: calc(100vh - 190px);
+      padding: 46px 40px;
+      background-color: #fafafa;
+      overflow: scroll;
       .message {
+        padding-bottom: 40px;
         .upper-message {
           display: flex;
           &__user-name {
