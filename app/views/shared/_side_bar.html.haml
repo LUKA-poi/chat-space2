@@ -1,14 +1,15 @@
 .side-bar
   .header
-    %h3.header__name
-      = current_user.name
-    %ul.header__lists
-      %li.list
-        = link_to new_group_path do
-          = icon('fa', 'edit',class: 'icon')
-      %li.list
-        = link_to edit_user_path(current_user) do
-          = icon('fa', 'cog',class: 'icon')
+    .side-header__box
+      %h3.header__name
+        = current_user.name
+      %ul.header__lists
+        %li.list
+          = link_to new_group_path do
+            = icon('fa', 'edit',class: 'icon')
+        %li.list
+          = link_to edit_user_path(current_user) do
+            = icon('fa', 'cog',class: 'icon')
   .groups
     - current_user.groups.each do |group|
       .group
