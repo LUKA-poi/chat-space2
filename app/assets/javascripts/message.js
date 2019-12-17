@@ -1,8 +1,8 @@
 $(function(){ 
-    var buildHTML = function(message) {
+    let buildHTML = function(message) {
         if (message.content && message.image) {
           //data-idが反映されるようにしている
-          var html = `<div class="message" data-message-id=` + message.id + `>` +
+          let html = `<div class="message" data-message-id=` + message.id + `>` +
             `<div class="upper-message">` +
               `<div class="upper-message__user-name">` +
                 message.user_name +
@@ -20,7 +20,7 @@ $(function(){
           `</div>`
         } else if (message.content) {
           //同様に、data-idが反映されるようにしている
-          var html = `<div class="message" data-message-id=` + message.id + `>` +
+          let html = `<div class="message" data-message-id=` + message.id + `>` +
             `<div class="upper-message">` +
               `<div class="upper-message__user-name">` +
                 message.user_name +
@@ -37,7 +37,7 @@ $(function(){
           `</div>`
         } else if (message.image) {
           //同様に、data-idが反映されるようにしている
-          var html = `<div class="message" data-message-id=` + message.id + `>` +
+          let html = `<div class="message" data-message-id=` + message.id + `>` +
             `<div class="upper-message">` +
               `<div class="upper-message__user-name">` +
                 message.user_name +
@@ -82,7 +82,7 @@ $('#new_message').on('submit', function(e){
    let reloadMessages = function() {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-      var last_message_id = $('.message:last').data("message-id");
+      let last_message_id = $('.message:last').data("message-id");
       $.ajax({
         //ルーティングで設定した通りのURLを指定
         url: "api/messages",
